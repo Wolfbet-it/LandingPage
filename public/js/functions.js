@@ -407,3 +407,4 @@ window.jscd = {
 'Screen Size: ' + jscd.screen + '\n\n' +
 'Full User Agent: ' + navigator.userAgent
 );*/
+
