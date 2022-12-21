@@ -1026,7 +1026,7 @@ p.moreinfo {
 
 .match-list {
     display: grid;
-    grid-template-columns: 20% 20% 30% 10%;
+    grid-template-columns: 20% 20% 30% 20%;
     gap: 20px;
     background: var(--primary-color);
     width: 100%;

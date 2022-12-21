@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="img/logo_footer.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Scelta partita</title>
+</head>
+<style>
+    img{
+        width: 75px;
+        height: 50px;
+    }
+    
+</style>
+
+<body class="sceltamatch">
+    <a>
+        <button onclick="toggleTheme()" class="btn-theme">
+            <i id="icona-tema" class="bx bxs-sun"></i>
+        </button>
+    </a>
+    <section class="container-partite">
+        <div class="filters-match">
+            <i class="bx bx-filter"></i>
+            <span>Match mondiale</span>
+        </div>       
+        <script>
+            fetch('mondialGames.json', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(response => response.response)
+            .then(matchs => {
+                matchs.sort((a, b) => a.fixture.timestamp - b.fixture.timestamp);
+                const firstMatch = matchs[0];
+                const lastMatch = matchs[matchs.length - 1];
+                console.log(matchs);
+                matchs.forEach(match => {
+                    // create a div whit class match-list
+                    const div = document.createElement('div');
+                    div.classList.add('match-list');
+                    // add to the dive the img of the team
+                    const img1 = document.createElement('img');
+                    img1.src = match.teams.home.logo;
+                    const img2 = document.createElement('img');
+                    img2.src = match.teams.away.logo;
+                    // create a div whit the name of the team in 2 p
+                    const divName = document.createElement('div');
+                    const p1 = document.createElement('p');
+                    p1.textContent = match.teams.home.name;
+                    const p2 = document.createElement('p');
+                    p2.textContent = match.teams.away.name;
+                    // add the p to the div
+                    divName.appendChild(p1);
+                    divName.appendChild(p2);
+                    // add the match id to the div id
+                    div.id = match.fixture.id;
+                    const span = document.createElement('span');
+                    let date = match.fixture.date.split("T");
+                    let time = date[1].split(":");
+                    time[0] = parseInt(time[0]) + 1;
+                    span.innerHTML = date[0] + " " + time[0] + ":" + time[1] + "<br>  " + match.fixture.status.long;
+                    div.appendChild(img1);
+                    div.appendChild(img2);
+                    div.appendChild(divName);
+                    div.appendChild(span);
+                    document.querySelector('.container-partite').appendChild(div);
+                    });
+                })
+        </script>
+        <!-- when a div is clicked create a get reques to the server and redirect to match.html --> 
+
+    </section>  
+    <script defer>
+            // find every click in the screen
+            document.addEventListener('click', (e) => {
+                // if the click is in a div with class match-list
+                console.log(e.target);
+                if (e.target.classList.contains('match-list')) {
+                    // get the id of the div
+                    const id = e.target.id;
+                    // goto match.html?id=id
+                    window.location.href = `match.html?id=${id}`;
+                }
+            })
+    </script>
+    <script defer type="text/javascript" src="/js/functions.js"></script>
+</body>
+</html>
