@@ -16,4 +16,4 @@ app.use((req, res, next) => {
     res.status(404).sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-app.listen(5000);
+app.listen(3000);
