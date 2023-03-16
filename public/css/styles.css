@@ -5,11 +5,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-.btn-theme {
-    background: transparent;
-    border: 0;
-    width: min-content;
-}
 
 :root {
     --font-family: 'Barlow';
@@ -40,11 +35,10 @@
 	--background: #010F14;
     --primary-color: #011C25;
     --second-color: #002C42;
-
     --third-color: #00404D;
-    --bold-font-color: #B5E3C5;
+    --blog-section-bg: #00404D;
 
-    --background-box-blog: #00404D;
+    --bold-font-color: #B5E3C5;
 
     --light-color: #D8F3DC;
     --text-color: #E7FEE7;
@@ -60,17 +54,16 @@
     --color-box: #011C25;
     --color-box-hover: #002C42;
 
-    --color-breadcrumbs: rgba(231, 254, 231, 0.5);
+    --color-breadcrumbs: rgba(231, 254, 231, 0.7);
 }
 
 .theme-light {
 	--background: #FFF;
     --primary-color: #D8F3DC;
     --second-color: #F5FEF5;
-
-    --background-box-blog: #B5E3C5;
-
     --third-color: #E7FEE7;
+    --blog-section-bg: #91D4AF;
+
     --bold-font-color: #00404D;
 
     --light-color: #002233;
@@ -87,7 +80,7 @@
     --color-box: #E7FEE7;
     --color-box-hover: #D8F3DC;
 
-    --color-breadcrumbs:rgba(1, 28, 37, 0.5); 
+    --color-breadcrumbs:rgba(1, 28, 37, 0.7); 
 }
 
 *::selection { 
