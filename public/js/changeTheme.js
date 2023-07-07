@@ -18,7 +18,7 @@ function start() {
     if (localStorage.getItem('theme') === 'theme-dark'){
         if(document.title === 'Login | WolfBet' || document.title === 'Cambio Password | WolfBet' || 
         document.title === 'Registrati | WolfBet' || document.title === 'Scelta match | WolfBet' || 
-        document.title === 'Blog | WolfBet') {
+        document.title === 'Blog | WolfBet' || document.title === 'Landing | WolfBet') {
             document.getElementById('logo-header').src = "img/logo_scrittaChiaro.svg";
         } 
         else {
@@ -34,7 +34,7 @@ function start() {
     } else {
         if(document.title === 'Login | WolfBet' || document.title === 'Cambio Password | WolfBet' || 
         document.title === 'Registrati | WolfBet' || document.title === 'Scelta match | WolfBet'|| 
-        document.title === 'Blog | WolfBet') {
+        document.title === 'Blog | WolfBet' || document.title === 'Landing | WolfBet') {
             document.getElementById('logo-header').src = "img/logo_scrittaScuro.svg";
         } 
         else {
