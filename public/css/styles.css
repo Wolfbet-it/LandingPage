@@ -208,7 +208,7 @@ a {
 
 .footer a {
     color: var(--text-color);
-    border-bottom: 1px solid var(--text-color);
+    /* border-bottom: 1px solid var(--text-color); */
     margin: 0 10px;
 }
 
