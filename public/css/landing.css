@@ -50,7 +50,7 @@
 }
 
 .hamburger-close {
-    content: url("/icon/cross.svg");
+    content: url("icon/cross.svg");
     padding: 3px;
 }
 
@@ -98,13 +98,19 @@
 
 /* IFRAME HEADER */
 .iframe-header {
-    width: 100%;
-    height: 500px;
+    position: relative;
+    width: 60%;
+    padding-bottom: 33.75%; /* Adjust this value based on the aspect ratio of your iframe content */
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 .iframe-header iframe {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* CTA HOMEPAGE */
@@ -408,6 +414,7 @@
 
 .icon-block .flex-inner span {
     font-weight: 500;
+    font-size: 20px;
     color: var(--text-color);
 }
 
@@ -785,6 +792,78 @@
     padding-bottom: 0;
 }
 
+/* ISCRIZIONE NEWSLETTER */
+.container-iscriviti {
+    display: grid;
+    width: 100%;
+    background: var(--primary-color);
+    padding: 20px;
+    gap: 40px;
+    margin-top: 3px;
+}
+
+.container-iscriviti h3 {
+    font-size: var(--h3-font);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.container-iscriviti p {
+    color: var(--text-color);
+}
+
+.textIscriviti p {
+    text-align: center;
+}
+
+.iscriviti {
+    width: 100%;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.iscriviti input {
+    margin-bottom: 20px;
+    background: var(--background);
+    border-radius: 15px;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    color: var(--text-color);
+}
+
+.iscriviti input::placeholder {
+    color: var(--text-color);
+    opacity: .7;
+    font-weight: 300;
+}
+
+.iscriviti input:hover {
+    background: var(--third-color);
+    cursor: pointer;
+}
+
+.iscriviti input:focus-visible {
+    outline: 1px solid var(--text-color);
+    border-radius: 15px;
+}
+
+.iscriviti .input-privacy input {
+    width: auto;
+    margin: 0 10px 20px 0;
+}
+
+.iscriviti p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.iscriviti p a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
 /* FAQ */
 .container-faq {
     margin: 30px auto;
@@ -909,6 +988,11 @@
         padding: 15px 30px;
     }
 
+    .iframe-header {
+        padding-bottom: 56.25%;
+        width: 100%;
+    }
+
     .container-cta {
         padding: 30px;
     }
@@ -930,6 +1014,9 @@
 
     .fascia-testo {
         padding: 30px;
+    }
+
+    .fascia-testo .inner .title-m {
         text-align: center;
     }
 

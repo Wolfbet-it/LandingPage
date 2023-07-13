@@ -8,6 +8,8 @@
 
 :root {
     --font-family: 'Barlow';
+    --big-title: 42px;
+    --medium-title: 32px;
     --h1-font: 36px;
     --h2-font: 24px;
     --h3-font: 20px;
@@ -206,7 +208,7 @@ a {
 
 .footer a {
     color: var(--text-color);
-    /* border-bottom: 1px solid var(--text-color); */
+    border-bottom: 1px solid var(--text-color);
     margin: 0 10px;
 }
 
