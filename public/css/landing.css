@@ -50,7 +50,7 @@
 }
 
 .hamburger-close {
-    content: url("icon/cross.svg");
+    content: url("/icon/cross.svg");
     padding: 3px;
 }
 
